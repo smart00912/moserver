@@ -15,7 +15,7 @@ class Modulehandle():
 
             client = salt.client.LocalClient()
             commonname=str(self.sys_param_array[0])
-            commonname=str(self.sys_param_array[0])
+           # commonname=str(self.sys_param_array[0])
             if commonname=="resin":
                 self.command="/etc/init.d/resin restart"
             elif commonname=="nginx":

@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i#tu)kuz8m#(ib8aax_fa)f+#1&*y7_#4x(x7yb=hw0#8+0a$l'
+SECRET_KEY = 'htbenet100'
+SYSTEM_NAME = 'TEST'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -53,7 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-SECRET_KEY = 'htbenet100'
+
 
 ROOT_URLCONF = 'moserver.urls'
 
