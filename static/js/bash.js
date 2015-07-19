@@ -127,7 +127,8 @@ Ajax.Responders.register(myGlobalHandlers);
 //加载一级菜单;
 function submitleavel()
 {
-	var url = '/autoadmin/server_fun_categ/';
+		alert('level1');
+	var url = '/moadmin/server_fun_categ/';
 	var myAjax = new Ajax.Request(
 	url,
 	{
@@ -161,7 +162,7 @@ function submitleave2(currvalue)
  	oOption_load.value=[-1];  
 	oOption_load.text='正在加载...';  
 	document.systemForm.serverAppclass.options.add(oOption_load);	
-	var url = '/autoadmin/server_app_categ/?fun_categId='+currvalue;
+	var url = '/moadmin/server_app_categ/?fun_categId='+currvalue;
 	var myAjax = new Ajax.Request(
 	url,
 	{
@@ -195,7 +196,7 @@ function submitleave3(currvalue)
  	oOption_load.value=[-1];  
 	oOption_load.text='正在加载...';  
 	document.systemForm.serverApplist.options.add(oOption_load);	
-	var url = '/autoadmin/server_list/?app_categId='+currvalue;
+	var url = '/moadmin/server_list/?app_categId='+currvalue;
 	//url=EncodeUtf8(url);
 	var myAjax = new Ajax.Request(
 	url,
@@ -298,7 +299,7 @@ function submitmodule()
 	if (!confirm("- - - - - - -提交确认- - - - - - -\n\n命令名称："+$F("ModuleName")+"\n\n操作对象：\n"+serverlist))
 		return false;
 
-	var url = '/autoadmin/module_run/?ModuleID='+$F("ModuleID")+'&hosts='+serverappvalue+urlpar;
+	var url = '/moadmin/module_run/?ModuleID='+$F("ModuleID")+'&hosts='+serverappvalue+urlpar;
 	var myAjax = new Ajax.Request(
 	url,
 	{
@@ -383,7 +384,7 @@ function submitmodule_add()
 	module_caption=$F('module_caption')
 	module_extend=$F('module_extend')
 	
-	var url = '/autoadmin/module_add_post/?module_name='+module_name+'&module_caption='+module_caption+'&module_extend='+module_extend;
+	var url = '/moadmin/module_add_post/?module_name='+module_name+'&module_caption='+module_caption+'&module_extend='+module_extend;
 	var myAjax = new Ajax.Request(
 	url,
 	{
@@ -411,7 +412,7 @@ function hiddenDIV(el) {
 //加载操作模块菜单;
 function loadmodule()
 {
-	var url = '/autoadmin/module_list/';
+	var url = '/moadmin/module_list/';
 	var myAjax = new Ajax.Request(
 	url,
 	{
@@ -439,7 +440,7 @@ function loadmoduleinfo(currvalue)
 {
    	if (currvalue==-1)
 		return false;
-	var url = '/autoadmin/module_info/?Module_Id='+currvalue;
+	var url = '/moadmin/module_info/?Module_Id='+currvalue;
 	var myAjax = new Ajax.Request(
 	url,
 	{

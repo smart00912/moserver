@@ -1,15 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+{% load staticfiles %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{{system_name}}</title>
 <meta  name="keywords" content="{{system_name}} " />
-<link href="/static/css/common.css" rel="stylesheet" type="text/css">
-<script type="application/javascript" src="/static/js/prototype.js"></script>
-<script type="application/javascript" charset="utf-8" src="/static/js/ymPrompt.js"></script>
-<link href="/static/css/skin/black/ymPrompt.css" rel="stylesheet" type="text/css">
-<script type="application/javascript" charset="utf-8" src="/static/js/bash.js"></script>
+<link href="{% static "css/common.css" %}" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="{% static "js/prototype.js" %}"></script>
+<script type="application/javascript" charset="utf-8" src="{% static "js/ymPrompt.js" %}"></script>
+<link href="{% static "css/skin/black/ymPrompt.css" %}" rel="stylesheet" type="text/css">
+<script type="application/javascript" charset="utf-8" src="{% static "js/bash.js" %}"></script>
 </head>
 <body onload="hiddenDIV('operate');">
 <div id="systemWorking" style="z-index:100; position:absolute;display:none;left:40%;top:40%"><table width="250" style="height: 20px" border="0" cellpadding="0" cellspacing="1" ><tr><td align="center" valign="middle"><img src="/static/images/loading.gif" style="alignment:center" alt="loading"></td></tr></table></div>
@@ -18,13 +19,13 @@
     <td colspan="2">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center" width="35%"><div align="center"><font class="baner_font">OMServer</font>
+    <td align="center" width="35%"><div align="center"><font class="baner_font">BETA 1</font>
     </div></td>
     <td align="left" width="65%">
 	<div class="select_border"> 
 	<div class="container">
 	  <select name="modules" id="modules" onChange="loadmoduleinfo(this.value)" class="select">
-        <option value="-1">正在加载...</option>
+        <option value="-1">Loading...</option>
       </select>
 	</div>
 	 </div>
@@ -50,7 +51,7 @@
     <tr>
       <td>
 	  <select name="serverclass" id="serverclass" onChange="submitleave2(this.value)" class="sys_server_select" size="8" multiple>
-	  	<option value="-1">正在加载...</option>
+	  	<option value="-1">Loading...</option>
       </select>
 	  </td>
     </tr>
@@ -58,7 +59,7 @@
       <td>
   
 	  <select name="serverAppclass" id="serverAppclass" onChange="submitleave3(this.value)" class="sys_server_select" size="8" multiple>
-	  <option value="-1">请选择应用类别</option>
+	  <option value="-1">Select App class</option>
       </select>
 	  </td>
     </tr>
@@ -76,17 +77,17 @@
     <tr>
       <td align="center">
 		<fieldset> 
-			<legend><span id="module_name"> ---模块操作区--- </span>[<img src='/static/images/02461211.gif' align='absmiddle' onmouseover="displayDIV('operate'); return false" onmouseout="hiddenDIV('operate'); return false">]
+			<legend><span id="module_name"> ---Modules--- </span>[<img src='{% static "images/02461211.gif" %}' alt="?" style="vertical-align:middle;" onmouseover="displayDIV('operate'); return false" onmouseout="hiddenDIV('operate'); return false">]
 			<div id="operate" style="filter:Alpha(opacity=90);display:none;position:absolute; top:155px; left:auto; width:400px;BORDER-RIGHT: 2px outset; BORDER-TOP: 1px outset; BACKGROUND: #eeeeee; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 2px outset; text-align:left;"><table cellpadding="3" cellspacing="1"><tr><td id="module_caption"></td></tr></table></div>
 			</legend>
-			  <table width="90%" height="30"  border="0" cellpadding="3" cellspacing="0">
+			  <table width="90%" style="height: 30px";  border="0" cellpadding="3" cellspacing="0">
     			<tr>
 			      <td width="50%"><div id="module_extend"></div></td>
 			      <td align="center">
-				  <input type="button" name="Submit_run" value="运  行" id="sys_run_button" onClick="return submitmodule();"> 
-				  <input type="button" name="Submit_ref" value="刷  屏" id="sys_run_button" onClick="javascript:$('placeholder').innerHTML ='';">
-				  <input type="button" name="Submit_add" value="添加模块" id="sys_add_button" onClick="javascript:window.location.href='/autoadmin/module_add/';">
-				  <input type="button" name="Submit_add" value="安全审计" id="sys_add_button" onClick="javascript:window.location.href='/omaudit/';">
+				  <input type="button" name="Submit_run" value="Execute" id="sys_run_button" onClick="return submitmodule();"> 
+				  <input type="button" name="Submit_ref" value="Refresh" id="sys_run_button" onClick="javascript:$('placeholder').innerHTML ='';">
+				  <input type="button" name="Submit_add" value="+Module" id="sys_add_button" onClick="javascript:window.location.href='/moadmin/module_add/';">
+				  <input type="button" name="Submit_add" value="Security" id="sys_add_button" onClick="javascript:window.location.href='/omaudit/';">
 				  </td>
     			</tr>
 			  </table>
@@ -105,7 +106,7 @@
 	<table width="95%" border="0" cellspacing="3" cellpadding="0" bgcolor="#000000">
 	  <tr>
     	<td align="left">
-		<font class="ajaxmodulerunresult">[user@omserver]# <img src='/static/images/cursor_f01.gif' align='absmiddle'></font><br>
+		<font class="ajaxmodulerunresult">[user@exec]# <img src={% static "images/cursor_f01.gif" %} align='absmiddle' alt="??"></font><br>
 		<div class="ajaxmodulerunresult" id="placeholder" style="height:430px;OVERFLOW-y:auto;font-family: Verdana, Arial,Vrinda,Tahoma;"></div>	
 		</td>
 	  </tr>
@@ -123,8 +124,12 @@
   </tr>
 </table>
 </body>
- <script type="application/javascript">
-	submitleavel();
-	loadmodule();
- </script>
+
+<script type="application/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"> </script>
+<script>
+    $(function(){
+        submitleavel();
+	    loadmodule(); 
+    })
+</script>
 </html>

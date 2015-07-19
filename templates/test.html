@@ -1,50 +1,17 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 {% load staticfiles %}
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{{system_name}}</title>
-<meta  name="keywords" content="{{system_name}} " />
-<link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css">
-<script type="application/javascript" src="{% static 'js/prototype.js' %}"></script>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css">
     
 <script type="application/javascript" charset="utf-8" src="{% static 'js/ymPrompt.js' %}"></script>
 <link href="{% static 'css/skin/black/ymPrompt.css' %}"  rel="stylesheet" type="text/css">
 <script type="application/javascript" charset="utf-8" src="{% static 'js/bash.js' %}"></script>
 </head>
 <body>
-	<script>alert('ok')</script>
-<div id="systemWorking" style="z-index:100; position:absolute;display:none;left:40%;top:40%"><table width="250" style="height: 20px;" border="0" cellpadding="0" cellspacing="1" ><tr><td align="center" valign="middle"><img src="/static/images/loading.gif" style="alignment: center;" alt="?"></td></tr></table></div>
-<table class="top_bottom" cellpadding="3" cellspacing="1">
-  <tr>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td align="center" width="35%"><div align="center"><font class="baner_font">OMServer</font>
-    </div></td>
-    <td align="left" width="65%">
-
-	</td>
-  </tr>
-  <tr>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-</table>
-
-<table width="200" style="height: 64px" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-
-
-<form action="" method="post" name="systemForm">
-	<span>test</span>
-<table width="700"  border="0" cellspacing="0" cellpadding="0" align="center">
-    <tr>
-      <td align="center" bgcolor="eeeeee">
-        <fieldset> 
+ <fieldset> 
           <legend><span>添加功能模块</span>
 			  </legend>
 			  <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -89,18 +56,6 @@
 			<input type="button" name="Submit" value="返 回" id="sys_add_button" onClick="javascript:window.location.href='/';">
 		  </p>
         </fieldset>	    </td>
-      </tr>
-  </table>
-  
-  <input type="hidden" name="ModuleID" id="ModuleID" value="">
-  <input type="hidden" name="ModuleName" id="ModuleName" value="">
-  </form>
 
-<br><br><br>
-<table class="down_bottom" cellpadding="3" cellspacing="1">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-</table>
 </body>
 </html>
