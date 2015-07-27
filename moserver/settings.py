@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'moserver.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-	'NAME':'moserver',
-        'USER': 'root',                      # Not used with sqlite3.
+	    'NAME':'moserver',
+        'USER': 'dbuser',                      # Not used with sqlite3.
         'PASSWORD': 'htbenet100',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': '10.10.6.210',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
